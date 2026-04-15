@@ -427,15 +427,50 @@ in.</p>
     -> Replace below <iframe></iframe> tag with your code
     -->
 
-    <div class="content-section" id="results">
-      <h2>Results</h2>
-      <p>TODO: Add Results</p>
-      <ul>
-        <li>TODO</li>
-        <li>TODO</li>
-      </ul>
-    </div>
+<section id="results" class="section">
+    <div class="container">
+        <h2 class="section-title">4 Results</h2>
+        <p>After processing the dataset through GEMMS, the AI-identified safety issues were manually cross-referenced against the ground-truth labels and original images. The performance of the model was evaluated based on the distribution of Positive, Overshot Positive, and Negative identifications across both photographic capture styles.</p>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; justify-content: center;">
+            
+            <div style="flex: 1; min-width: 300px; max-width: 400px; text-align: center;">
+                <h3 style="font-size: 18px; margin-bottom: 20px;">Focal Imagery Performance (N=649)</h3>
+                
+                <svg width="100%" height="100%" viewBox="0 0 42 42" style="max-height: 250px; overflow: visible;">
+                    <circle cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#27c93f" stroke-width="6" stroke-dasharray="86.6 13.4" stroke-dashoffset="25"></circle>
+                    <circle cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ffbd2e" stroke-width="6" stroke-dasharray="11.1 88.9" stroke-dashoffset="38.4"></circle>
+                    <circle cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ff5f56" stroke-width="6" stroke-dasharray="2.3 97.7" stroke-dashoffset="27.3"></circle>
+                </svg>
 
+                <div style="text-align: left; margin-top: 20px; font-size: 14px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                    <div style="margin-bottom: 5px;"><span style="display: inline-block; width: 12px; height: 12px; background: #27c93f; border-radius: 50%; margin-right: 8px;"></span><strong>Positive:</strong> 86.6% (n=562)</div>
+                    <div style="margin-bottom: 5px;"><span style="display: inline-block; width: 12px; height: 12px; background: #ffbd2e; border-radius: 50%; margin-right: 8px;"></span><strong>Overshot Positive:</strong> 11.1% (n=72)</div>
+                    <div><span style="display: inline-block; width: 12px; height: 12px; background: #ff5f56; border-radius: 50%; margin-right: 8px;"></span><strong>Negative:</strong> 2.3% (n=15)</div>
+                </div>
+                <p style="margin-top: 15px; font-size: 13px; color: #666;"><strong>Figure 1.</strong> Distribution of GEMMS performance on Focal Imagery.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; max-width: 400px; text-align: center;">
+                <h3 style="font-size: 18px; margin-bottom: 20px;">360 Imagery Performance (N=30)</h3>
+                
+                <svg width="100%" height="100%" viewBox="0 0 42 42" style="max-height: 250px; overflow: visible;">
+                    <circle cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#27c93f" stroke-width="6" stroke-dasharray="56.7 43.3" stroke-dashoffset="25"></circle>
+                    <circle cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ffbd2e" stroke-width="6" stroke-dasharray="10 90" stroke-dashoffset="68.3"></circle>
+                    <circle cx="21" cy="21" r="15.91549431" fill="transparent" stroke="#ff5f56" stroke-width="6" stroke-dasharray="33.3 66.7" stroke-dashoffset="58.3"></circle>
+                </svg>
+
+                <div style="text-align: left; margin-top: 20px; font-size: 14px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                    <div style="margin-bottom: 5px;"><span style="display: inline-block; width: 12px; height: 12px; background: #27c93f; border-radius: 50%; margin-right: 8px;"></span><strong>Positive:</strong> 56.7% (n=17)</div>
+                    <div style="margin-bottom: 5px;"><span style="display: inline-block; width: 12px; height: 12px; background: #ffbd2e; border-radius: 50%; margin-right: 8px;"></span><strong>Overshot Positive:</strong> 10.0% (n=3)</div>
+                    <div><span style="display: inline-block; width: 12px; height: 12px; background: #ff5f56; border-radius: 50%; margin-right: 8px;"></span><strong>Negative:</strong> 33.3% (n=10)</div>
+                </div>
+                <p style="margin-top: 15px; font-size: 13px; color: #666;"><strong>Figure 2.</strong> Distribution of GEMMS performance on 360 Imagery.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
     <!-- 3 Images Carousel -->
     <h3>Image Gallery</h3>
     <div class="carousel-container" id="imageCarousel">
