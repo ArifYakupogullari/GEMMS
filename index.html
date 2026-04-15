@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Main Step: Edit below title -->
-    <title>TODO: Paper Title</title>
+    <title>A Vision Language Framework For Automated Construction Safety Auditing From Photographs:GEMMS</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="" />
     <meta
       name="keywords"
-      content="research papers, academic papers, AI research, robotics research, machine learning, published papers, scientific papers, academic journals"
+      content="360-degree imagery, automated safety auditing, gemma 3, segment anything model 3, vision language models"
     />
     <!-- <meta name="author" content="Research Paper Platform" />
     <meta name="robots" content="index, follow" />
@@ -106,29 +106,25 @@
       <h1>TODO: Paper Title</h1>
       <div class="authors">
         <p>
-          <a href="#">TODO: Author name 1</a><sup>1</sup>,
-          <a href="#">TODO: Author name 2</a><sup>*1,3</sup>,
-          <a href="#">TODO: Author name 3</a><sup>*2</sup>,
-          <a href="#">TODO: Author name 4</a><sup>*1</sup>,
-          <a href="#">TODO: Author name 5</a><sup>2</sup>,
-          <a href="#">TODO: Author name 6</a><sup>1</sup>
+          <a href="#">Ahmet Arif Yakupogullari</a><sup>1</sup>,
+          <a href="#">Mikael Johansson</a><sup>*1,3</sup>,
+          <a href="#">Mattias Roupe</a><sup>*2</sup>,
+          <a href="#">Max Bergstrom</a><sup>*1</sup>
         </p>
         <p>
-          <sup>1</sup>TODO: University name 1 &nbsp;&nbsp; <sup>2</sup>TODO:
-          University name 2&nbsp;&nbsp; <sup>3</sup>TODO: University name 3
+          <sup>1</sup>Chalmers University of Technology &nbsp;&nbsp; <sup>2
         </p>
         <p>
           <sup>1</sup
-          ><a href="mailto:example1@email.com">TODO:email1@email.com</a>,
+          ><a href="mailto:ahmetari@chalmers.se">TODO:ahmetarif.yakupogullari@chalmers.se</a>,
           <sup>2</sup
-          ><a href="mailto:example2@email.com">TODO:email2@email.com</a>
+          ><a href="mailto:jomi@chalmers.se">TODO:jomi@chalmers.se</a>
         </p>
         <p>
           <em>*Equal Contribution</em
           ><!-- Remove if not applicable -->
         </p>
-        <p>📌 Conference on TODO: Conference name, 2023 (Oral Talk)</p>
-        <p>📌 Presented at TODO: Conference name 2024, Yokohama, Japan.</p>
+        <p>📌 Conference on TODO: Creative Construction Conference, 2026, Sopron Hungary</p>
       </div>
     </div>
 
@@ -161,29 +157,9 @@
     -->
 
     <!-- Single YouTube Video -->
-    <div class="video-section">
-      <h3>Demo Video</h3>
-      <div class="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/ysFav0b472w?si=Rxxp3R6_tkBXAEmP"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <p>
-        TODO: This is the short explanation paragraph of the video. Add your
-        paragraph here if required
-      </p>
-    </div>
-
     <div class="abstract" id="abstract">
       <h2>Abstract</h2>
-      <p>TODO: Add Abstract</p>
+      <p>Construction sites are highly dynamic and mentally demanding work environments. In 2022, Canada recorded 28,512 lost-time injuries in the construction sector. Because the majority of these claims were linked to struck-by hazards, researchers argue that the inherent dynamism of construction sites reduces situational awareness, making hazard identification exceedingly difficult. A proposed method for mitigating these effects is the deployment of rapid-tempo attention cycles facilitated by artificial intelligence (AI). Although many out-of-the-box models possess basic vision-reasoning capabilities, successful workplace adoption requires high levels of accuracy, rendering general models unsuitable for direct workflow integration. However, as demonstrated in recent benchmarks, hybrid approaches combining specialized models can achieve human-level accuracy. In this paper, we present and benchmark GEMMS, a novel hybrid vision-language model coupling Gemma 3 and Segment Anything 3 (SAM3) for automated site safety auditing. This study specifically evaluates GEMMS's accuracy in detecting safety issues across different photographic capture styles. Our findings indicate that while highly accurate, autonomous hazard prediction is possible using intentional focal imagery, the processing of passive 360-degree imagery currently requires semi-autonomous interaction to be effectively utilized in safety workflows.</p>
     </div>
 
     <!-- Step 3 End: Add your paper abstract -->
@@ -197,7 +173,51 @@
 
     <div class="content-section" id="introduction">
       <h2>Introduction</h2>
-      <p>TODO: Add Introduction</p>
+      <p>Construction sites, characterised as dynamic and fast
+paced spaces by [1], are mentally demanding work
+environments([2],[3],[4]). Data from [5] presents that,
+Canada in 2022 has recorded 28512 lost time injuries
+in construction sector while in United Kingdom a ma-
+jority of the claims are identified as struck-by hazard by
+[6]. Further investigating factors contributing struck-by
+hazards,[1] and [6] found dynamism as a major factor
+on struck-by hazards through making it harder to iden-
+tify safety issues and severing situational awareness. Ac-
+cording to [2] and [7] fast feedback loops equipped with
+continuous shifts of attention could mitigate dynamism’s
+effects, while [8] and [4] claims through use emergent
+technologies like artificial intelligence we can achieve fast
+feedback loops.
+As research from [9] and [10] shows, AI adoption
+in real-world workflows is dependent on accuracy of a
+model. Although general purpose artificial intelligence
+models such as Gemini 2.5 can explain scenes and detect
+objects([11]), [12] found Gemini 2.5 to be very inaccurate
+for object identification compared to humans. When [12]
+benchmarked their Segment Anything 3 Unified Founda-
+tion Model(SAM3), SAM3 alone performed worse than
+humans while utilisation of SAM3 with reasoning and
+vision capable models like Gemini 2.5 managed to pro-
+duce better results than humans. However, since object
+identification is just a step in issue identification([6]) and
+SAM3 lacks reasoning abilities([12]), without a model
+capable of visual reasoning it cannot identify safety is-
+sues. We consider Gemma 3 to be a more suitable reason-
+ing model due to being built for visual reasoning, unlike
+Gemini 2.5 which is a large language model with vision
+capabilities([13],[11]).
+Primary objective of this research is to develop and vali-
+date our hybrid AI model GEMMS as a potential safety au-
+diting automation tool for site managers. Specifically, this
+study focuses on benchmarking GEMMS against labeled
+focal images and then passive 360 imagery for autonomous
+identification of struck-by hazards, which remain the lead-
+ing cause of severe construction injuries([5],[1]).
+It needs to be noted that, as our 360 images are artifacts
+from OpenSpace data from a real worksite, some issue
+might not be well visible through corresponding 360 im-
+ages, a new dataset generated with the intention of issue
+identification might yield clearer adoption strategies.</p>
     </div>
 
     <!-- Step 4 End: Add your paper introduction -->
@@ -211,7 +231,129 @@
 
     <div class="content-section" id="methodology">
       <h2>Methodology</h2>
-      <p>TODO: Add Methodology</p>
+      <p>Our hybrid model called GEMMS is a combination of
+Gemma 3 and Segment Anything 3. Our design choice
+as reflected on background section of this paper stems
+from the accuracy achieved through hybrid approaches
+observed on [12]. We deemed Gemma 3 to be a superior
+model to Gemini 2.5 due to being built directly for vision
+and with its lower computational overhead([13],[11]). Ad-
+ditionally when understood that Gemini utilises Gemma
+as its vision capable side, utilising Gemma alone meant
+more direct control over the software while having a lower
+computational overhead([13]).
+In this approach Gemma serves as spatial context gen-
+eration tool while SAM verifies the findings presented by
+Gemma. For instance, from a given image, Gemma would
+start by explaining the scene to it itself. Then through our
+set of safety protocols built in as an itterative step by step
+evaluation prompt, it creates hypothesises about potential
+issues it deems as existent. Then it gives multiple com-
+plex nouns to SAM for verifying the objects in relation to
+detected issues. After checking if locations of said objects
+are matching with the hypothesis, Gemma then further
+questions SAM to verify other crucial elements that also
+is a part of this issue. Example being Gemma sees a con-
+struction site with a drop like area where guardrailing is
+present while it suspects that its missing a toeboard. It
+would question SAM on the existence of guardrailing in
+the area it deemed the guardrailing should have existed,
+then it queries SAM regarding to if there is a toeboard on
+the scene. If the board is not visible to SAM in the desired
+location, a location it derived from the segmented area
+of guardrails, it concludes that this is an illegal guardrail
+since the drop and the missing toeboard could result in
+falling debris.
+3.2 Focal and 360 Imagery
+As GEMMS utilises photographic input as its initial
+context, we must now define two different photographic
+capture styles. The style we refer to as focal imagery
+consists of images taken from a real construction site dur-
+ing a safety inspection by an auditor. Particularly, we are
+working with data from the Lumi renovation project in Up-
+psala. According to [20], this site successfully achieved
+Total BIM by replacing static documents with dynamic,
+object-linked digital checklists via the StreamBIM plat-
+form. This specific digital workflow inherently generated
+the rich artifacts we use to construct our dataset. Because
+these images were initially captured as spatial markers
+within StreamBIM, this focal imagery is embedded within
+the site’s BCF (BIM Collaboration Format) data. Conse-
+quently, alongside the images, we have direct access to the
+corresponding issues written by safety inspectors, as well
+as precise data regarding where each issue lies in the BIM
+coordinate space.
+Our second photographic style is 360-degree imagery.
+Lumi project utilized 360-degree site walks to leverage
+tools such as OpenSpace. Although this data did not na-
+tively share the exact coordinate space of the 3D BIM
+model, it utilised a coordinate system based on the 2D
+floor plan. By translating between these two systems, we
+generated a new dataset where the 360-degree images were
+anchored directly to the BIM coordinate space. Utilising
+the issue coordinates from the BCF files, we were then
+able to map corresponding 360-degree images to the exact
+locations of pinpointed safety issues3.3 Assessment Method
+Our assessment is divided into two categories based
+on the input type: Focal Imagery and 360 Imagery. Be-
+cause focal imagery is captured with the explicit intent
+of documenting a specific issue, the problem is typically
+centered and prominent within the frame. In contrast, 360-
+degree imagery captures the entire environment, meaning
+the safety issue may be located peripherally or at a dis-
+tance.
+After processing these images through GEMMS, we
+manually evaluate each image’s AI-generated label against
+its original counterpart. This manual evaluation is nec-
+essary because some of the original issue descriptions
+provided by auditors and workers do tend to vary in ex-
+plicit detail, making automated string-matching compar-
+isons unreliable. We have separated our marking into three
+distinct categories:
+Positive: GEMMS correctly matched the ground-truth
+issue without any hallucinations. This category also in-
+cludes additionally identified issues that we deemed cor-
+rect upon our own manual inspection of the images.
+Overshot Positive: GEMMS successfully identified
+valid issues but also made at least one false assumption or
+hallucination regarding the image.
+Negative: GEMMS failed to identify a valid problem
+within a given image, despite the ground-truth label ex-
+plicitly noting an issue.
+3.4 Experiment Design
+In the beginning, GEMMS is fed with information based
+on [6]’s issue categorisation and ways to prevent them.
+We compiled a category of violations, steps to validate
+and check them for Gemma’s thinking chain. After we
+feed our images into GEMMS, it produces an investigator
+log book with a detailed thought chain and a verdict book
+where the issue and its description is written. After cross
+comparing results to images and labels we determine the
+category this result belongs into.
+3.5 Dataset
+Our dataset is composed of 2030 safety issues detected
+within Lumi project. Out of these issues we have filtered
+down to 649 issues which were related to a wider defined
+category of issues based on struck by hazards. Our inter-
+pretation of struck-by category derives from [6]’s defini-
+tion of the topic while additionally also covering tripping
+and falling hazards too. Hence it covers being hit by an
+object from any direction and any means such as, struck
+by a rolling, swinging, falling and flying objects. Which
+in return resulted us covering 74.6 percent of major injury
+causes in construction defined by [6].
+From the 649 safety issues, all of them contained a focal
+image while due to time and data limitations we were only
+able to generate 30 360 images that corresponded to these
+issues. The reason for the scarcity of 360 imagery is mainly
+due to captures being done towards the afternoon while
+checks and fixes were conducted early morning. Hence
+the issues we were able to find were multi-day problems
+that were missed in between safety checks. Additionally
+the capture method, most of the times, missed the issues
+as the walks were not meant to cover the entire floorpan
+but rather to give a general idea for what state the site is
+in.</p>
       <ul>
         <li>TODO</li>
         <li>TODO</li>
