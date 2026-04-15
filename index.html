@@ -56,7 +56,7 @@
     </nav>
 
     <div class="header">
-      <h1>TODO: Paper Title</h1>
+      <h1>A Vision Language Framework For Automated Construction Safety Auditing From Photographs:GEMMS</h1>
       <div class="authors">
         <p>
           <a href="#">Ahmet Arif Yakupogullari</a><sup>1</sup>,
@@ -69,14 +69,14 @@
         </p>
         <p>
           <sup>1</sup
-          ><a href="mailto:ahmetari@chalmers.se">TODO:ahmetarif.yakupogullari@chalmers.se</a>,
+          ><a href="mailto:ahmetari@chalmers.se">ahmetarif.yakupogullari@chalmers.se</a>,
           <sup>2</sup
-          ><a href="mailto:jomi@chalmers.se">TODO:jomi@chalmers.se</a>
+          ><a href="mailto:jomi@chalmers.se">jomi@chalmers.se</a>
         </p>
         <p>
           <em>*Equal Contribution</em
           ></p>
-        <p>📌 Conference on TODO: Creative Construction Conference, 2026, Sopron Hungary</p>
+        <p>📌 Conference: Creative Construction Conference, 2026, Sopron Hungary</p>
       </div>
     </div>
 
@@ -434,22 +434,45 @@ for the passive nature of the captures./p>
     </div>
 
     <div class="content-section" id="acknowledgement">
-      <h2>Acknowledgement</h2>
-      <p>TODO: Add Acknowledgement if applicable or remove this</p>
+      <h2>Limitations</h2>
+      <p>A primary limitation observed during the testing of
+GEMMS is the model’s propensity for over-prediction, as
+evidenced by the Overshot Positive rates in both datasets.
+Large Language Models exhibit a well-documented com-
+pliance bias, formally known as sycophancy, wherein mod-
+els prioritize fulfilling a user’s prompt over objective fac-
+tual accuracy [22]. In the context of Vision-Language
+Models, this compliance frequently manifests as prompt-
+induced object hallucination [23]. When GEMMS is
+prompted to ”find a safety issue,” the AI’s internal align-
+ment forces it to satisfy the directive, occasionally hallu-
+cinating violations (e.g., flagging a completely safe edge
+as missing a guardrail) even when no hazard exists.
+Consequently, this sycophantic bias made it practically
+impossible to evaluate GEMMS against a true ”control
+group” of perfectly safe images. Construction sites are
+inherently chaotic, and finding an actively utilized space
+completely devoid of any potential hazard is highly unre-
+alistic; the AI’s bias towards overdoing the task ensures it
+will almost always flag something. However, in the con-
+text of safety engineering, this hyper-sensitive AI behavior
+is a feature rather than a complete failure. The risk pro-
+file is asymmetric: an overshot positive (a false alarm)
+merely costs a site manager a few seconds of review time,
+whereas a false negative (calling an unsafe state ”safe”)
+could result in a fatal incident. Therefore, while the AI’s
+alarmist bias is a limitation for full autonomy, it safely
+aligns with the operational priorities of construction man-
+agement. Although this could be argues as a potential
+cognitive overloading cause and further reduce the trust
+in this system therefore reducing the adoption rates. Any
+future filtering mechnaism that would aim to solve this
+problem would require intensive user evaluation studies to
+produce an adoptable product.</p>
     </div>
 
     <div class="footer">
-      <p>© 2024 [TODO: Add Name or University]. All rights reserved.</p>
-      <p>
-        Website template free to borrow from
-        <a
-          href="https://github.com/indramal/iNdra-GitHub-Page-Template-For-Resarch"
-          >here</a
-        >.
-      </p>
-       <div>
-          <img src="https://profile-counter.glitch.me/indragithubpagetemplate/count.svg" alt="Profile Counter">
-</div>
+      <p>© 2026 [Chalmers University of Technology]. All rights reserved.</p>
 
     <button class="scrollUpBtn" id="scrollUpBtn" onclick="scrollToTop()">
       ⬆
