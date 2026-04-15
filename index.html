@@ -359,6 +359,53 @@ in.</p>
         <li>TODO</li>
       </ul>
     </div>
+    <section id="how-it-works" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-title">How GEMMS Thinks</h2>
+                <p>GEMMS anchors its spatial reasoning through an iterative process. It creates an investigator log book with a detailed thought chain and a final verdict. Below is a real demonstration of how Gemma 3 and SAM3 interact to identify an issue.</p>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 30px; align-items: stretch;">
+                    
+                    <div style="flex: 1; min-width: 300px;">
+                        <img src="Assets/b6a3be29-ad2f-49cb-8a4a-89fd83482845_cdv_photo_006.jpg" alt="Construction Site Analysis" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    </div>
+
+                    <div style="flex: 1; min-width: 300px; background-color: #1e1e1e; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; display: flex; flex-direction: column;">
+                        
+                        <div style="background-color: #2d2d2d; padding: 10px 15px; border-bottom: 1px solid #3d3d3d; display: flex; gap: 8px;">
+                            <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ff5f56;"></span>
+                            <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffbd2e;"></span>
+                            <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #27c93f;"></span>
+                            <span style="color: #888; font-family: monospace; font-size: 12px; margin-left: 10px;">investigator_log.json</span>
+                        </div>
+
+                        <pre style="margin: 0; padding: 20px; overflow-x: auto; font-family: 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.5; color: #a6accd; background-color: transparent;"><code>{
+  <span style="color: #82aaff;">"file"</span>: <span style="color: #c3e88d;">"b6a3be29-ad2f-49cb-8a4a-89fd83482845_cdv_photo_006.jpg"</span>,
+  
+  <span style="color: #82aaff;">"macro_context"</span>: <span style="color: #c3e88d;">"The image depicts an active construction site, specifically a concrete floor slab undergoing some form of modification or demolition. There are numerous circular cutouts in the concrete, suggesting core drilling has been performed..."</span>,
+  
+  <span style="color: #82aaff;">"leads"</span>: <span style="color: #c3e88d;">"The most prominent hazard is the series of uncovered circular holes in the concrete floor. These represent significant fall risks. Additionally, there's debris and broken concrete around these holes, increasing the trip hazard..."</span>,
+  
+  <span style="color: #82aaff;">"sam_queries"</span>: [
+    <span style="color: #c3e88d;">"core drill hole"</span>,
+    <span style="color: #c3e88d;">"plywood"</span>,
+    <span style="color: #c3e88d;">"cable"</span>
+  ],
+  
+  <span style="color: #82aaff;">"sam_evidence"</span>: <span style="color: #c3e88d;">"- 'core drill hole' found at coordinates: [769.52, 1451.53, 860.28, 1547.03]\n- 'plywood' found at coordinates: [550.83, 865.55, 1398.26, 1705.36]\n- 'cable' found at coordinates: [1.91, 391.12, 1393.75, 905.31]"</span>,
+  
+  <span style="color: #82aaff;">"evidence_review"</span>: <span style="color: #c3e88d;">"The 'core drill hole' coordinates confirm multiple uncovered holes in the concrete floor. These holes are a significant hazard as they present an unprotected void. The 'plywood' coordinates indicate several boards scattered around the area, but none are covering the holes..."</span>,
+  
+  <span style="color: #82aaff;">"action"</span>: <span style="color: #c3e88d;">"FINAL_VERDICT"</span>
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Step 5 End: Add your paper methodology -->
 
