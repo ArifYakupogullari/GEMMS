@@ -1,68 +1,38 @@
-# iNdra Page Template: This is a Website / GitHub Page Template for Research Papers / Academic Papers [Free] [v1]
+# GEMMS: A Vision Language Framework For Automated Construction Safety Auditing From Photographs
 
-> Demo Page - (https://arifyakupogullari.github.io/GEMMS/)
+[![Project Page](https://arifyakupogullari.github.io/GEMMS/)](#)  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-You can free to borrow from this template for your own personal use. Please do not remove below code of the template mentioned to about this template.
+> **Official repository for the paper:** *"A Vision Language Framework For Automated Construction Safety Auditing From Photographs: GEMMS"* > **Authors:** Ahmet Arif Yakupogullari, Mikael Johansson, Mattias Roupe, Max Bergstrom (Chalmers University of Technology)  
+> **Conference:** Creative Construction Conference, 2026, Sopron, Hungary.
 
-## Included
-
-* SEO tags
-* All paper sections (Abstract,Introduction,Methodology, Results, Conclusion,BibTeX,Acknowledgement)
-* Authers details
-* BibTex Copy to Clipboard button - Reader can easily copy it
-* Pre-built codes
-  * Image Gallery - Auto Slideshow
-  * Video Gallery - Auto Slideshow
-  * Demo Video
-  * Demo Videos List
-* Dark Mode
-* Menu Bar
-* Scroll Up Button
-
-## Simple Steps
-
-Step 1: Fork this repo or download this repo
-
-Step 2: Edit index.html file (Comments included)
-
-Step 3: Create your own repo for your research in your GitHub account and upload files
-
-Step 4: Creare a page for that (Repo Setting --> Pages --> Select Brach and Save then GitHub Action will run and give Page URL for your page)
-
-## index.html File Edit Help
-
-If you know web development, you can edit the index.html file and also script.js and style.css files.
-
-This has main step and step 1 to 10. index.html file also has comments for each step. If you have any query, please contact me.
-
-**Steps:**
-
-Main Step: Edit Page Title (Edit SEO tags if you can, it will help for Google Search)
-
-Step 1: Header Part (Authers and Other Details)
-
-Step 2: Button for links
-
-Step 3: Add your paper abstract
-
-Step 4: Add your paper introduction
-
-Step 5: Add your paper methodology
-
-Step 6: Add your paper results
-
-Step 7: Add your paper conclusion
-
-Step 8: Add your paper bibtex
-
-Step 9: Add your paper acknowledgements
-
-Step 10: Edit page footer
 
 ---
 
-Please send me feedback on [GitHub](https://github.com/indramal/iNdra-GitHub-Page-Template-For-Resarch/issues)
+## 📖 About the Paper
 
-> Made with ❤️ by [Indramal](https://github.com/indramal)
+Construction sites are inherently dynamic and mentally demanding, leading to reduced situational awareness and high injury rates (notably struck-by hazards). While general-purpose AI models (like Gemini 2.5) struggle with accurate, autonomous object identification in complex environments, hybrid models can achieve expert-level accuracy. 
 
-![Visitor Count](https://profile-counter.glitch.me/indramalgithubpagetemplate/count.svg)
+**GEMMS** couples two state-of-the-art models to achieve this:
+* **The "Retina" (Segment Anything 3 / SAM3):** Handles precise visual grounding and spatial bounding.
+* **The "Brain" (Gemma 3):** Handles multi-step spatial reasoning and safety compliance validation.
+
+In our benchmarks, GEMMS achieved an **86.6% positive accuracy rate** on intentional focal imagery. While Large Language Models exhibit an "alarmist" bias (frequently over-predicting hazards), we demonstrate that in the context of safety engineering, this asymmetrical risk profile is highly advantageous. 
+
+---
+
+## ⚙️ How It Works (The 4-Phase Reasoning Engine)
+
+Instead of simply asking an AI "is this safe?", GEMMS executes a strict, structured protocol:
+1. **The Assembly Scan:** SAM3 scans the image against a predefined vocabulary to extract a spatial inventory.
+2. **The Ghost Scan:** Gemma 3 evaluates structural deficiencies (e.g., a guardrail missing a kickboard).
+3. **The Context Filter:** The AI applies active-work logic (e.g., distinguishing between an abandoned cable hazard vs. a cable actively held by a worker).
+4. **Relational Reporting:** Outputs a precise `JSON` verdict and draws laser-pointer annotations on the image to highlight the hazard or point to missing required components.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* **OS:** Ubuntu 20.04/22.04 or Windows 10/11
+* **GPU:** NVIDIA GPU with at least 16GB+ VRAM recommended (for running Gemma-3-27b and SAM3 concurrently).
+* **Python:** 3.9+
