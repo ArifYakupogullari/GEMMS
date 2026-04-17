@@ -365,6 +365,64 @@ in.</p>
 
         </div>
     </div>
+      
+</section>
+<section id="algorithm" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-title">The GEMMS Pipeline</h2>
+                <p>The core algorithm operates as a dual-model architecture. SAM3 acts as the "Retina," scanning the image against a predefined site vocabulary to extract a spatial inventory. Gemma 3 acts as the "Brain," ingesting this spatial data alongside the visual frame to execute a strict 4-phase reasoning protocol (Assembly Scan, Ghost Scan, Context Filter, and Relational Reporting).</p>
+                
+                <div style="width: 100%; max-width: 900px; margin: 30px auto 0; background-color: #1e1e1e; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; display: flex; flex-direction: column; text-align: left;">
+                    
+                    <div style="background-color: #2d2d2d; padding: 10px 15px; border-bottom: 1px solid #3d3d3d; display: flex; gap: 8px; align-items: center;">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ff5f56;"></span>
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffbd2e;"></span>
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background-color: #27c93f;"></span>
+                        <span style="color: #888; font-family: monospace; font-size: 12px; margin-left: 10px;">gemms_auditor.py</span>
+                    </div>
+
+                    <pre style="margin: 0; padding: 25px; overflow-x: auto; font-family: 'Courier New', Courier, monospace; font-size: 14px; line-height: 1.6; color: #f8f8f2; background-color: transparent;"><code><span style="color: #6272a4;"># --- GEMMS: Automated Safety Auditing Pipeline ---</span>
+
+<span style="color: #ff79c6;">def</span> <span style="color: #50fa7b;">run_gemms_audit</span>(image):
+    <span style="color: #6272a4;"># 1. Initialize Models</span>
+    sam3_retina <span style="color: #ff79c6;">=</span> load_segmentation_model(<span style="color: #f1fa8c;">"SAM3"</span>)
+    gemma_brain <span style="color: #ff79c6;">=</span> load_vision_language_model(<span style="color: #f1fa8c;">"Gemma-3-27b-it"</span>)
+
+    <span style="color: #6272a4;"># 2. Phase 1: Semantic Scene Inventory (The Retina)</span>
+    visual_inventory <span style="color: #ff79c6;">=</span> []
+    <span style="color: #ff79c6;">for</span> concept <span style="color: #ff79c6;">in</span> SITE_VOCABULARY:
+        detections <span style="color: #ff79c6;">=</span> sam3_retina.detect(image, prompt=concept, threshold=<span style="color: #bd93f9;">0.18</span>)
+        
+        <span style="color: #ff79c6;">if</span> detections.found():
+            visual_inventory.append(detections.get_spatial_data())
+
+    <span style="color: #6272a4;"># 3. Phase 2: Structural & Contextual Reasoning (The Brain)</span>
+    <span style="color: #6272a4;"># Compiles the Safety Codex, Prompt Instructions, and SAM3 Inventory</span>
+    audit_prompt <span style="color: #ff79c6;">=</span> construct_reasoning_prompt(SITE_SAFETY_MANUAL, visual_inventory)
+    
+    <span style="color: #6272a4;"># Executes the 4-Phase Logic: Assembly -> Ghost -> Context -> Verdict</span>
+    reasoning_output <span style="color: #ff79c6;">=</span> gemma_brain.analyze(image, audit_prompt)
+
+    <span style="color: #6272a4;"># 4. Parse Identified Hazards</span>
+    violations <span style="color: #ff79c6;">=</span> extract_json_verdicts(reasoning_output)
+
+    <span style="color: #6272a4;"># 5. Visual Anchoring & Logging</span>
+    <span style="color: #ff79c6;">for</span> hazard <span style="color: #ff79c6;">in</span> violations:
+        <span style="color: #ff79c6;">if</span> hazard.is_missing_component():
+            <span style="color: #6272a4;"># If a component is missing, anchor the warning to the remaining structure</span>
+            anchor <span style="color: #ff79c6;">=</span> find_structural_anchor(visual_inventory, hazard)
+            draw_laser_annotation(image, anchor.coordinates, label=<span style="color: #f1fa8c;">"MISSING COMPONENT"</span>)
+        <span style="color: #ff79c6;">else</span>:
+            <span style="color: #6272a4;"># Otherwise, highlight the active physical hazard</span>
+            draw_laser_annotation(image, hazard.coordinates, label=hazard.name)
+
+    <span style="color: #ff79c6;">return</span> violations, annotated_image</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
     <h3>Image Gallery</h3>
     <div class="carousel-container" id="imageCarousel">
