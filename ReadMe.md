@@ -1,6 +1,6 @@
 # GEMMS: A Vision Language Framework For Automated Construction Safety Auditing From Photographs
 
-[![Project Page](https://arifyakupogullari.github.io/GEMMS/)](#)  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Project Page](https://arifyakupogullari.github.io/GEMMS/)]  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **Official repository for the paper:** *"A Vision Language Framework For Automated Construction Safety Auditing From Photographs: GEMMS"* > **Authors:** Ahmet Arif Yakupogullari, Mikael Johansson, Mattias Roupe, Max Bergstrom (Chalmers University of Technology)  
 > **Conference:** Creative Construction Conference, 2026, Sopron, Hungary.
